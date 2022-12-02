@@ -11,6 +11,7 @@ import TrackListScreen from './src/screens/TrackListScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
 import { setNavigator } from './src/navigationRef';
 import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 const switchNavigator = createSwitchNavigator({
   ResolveAuth: ResolveAuthScreen,
@@ -18,7 +19,7 @@ const switchNavigator = createSwitchNavigator({
     Signup: SignupScreen,
     Signin: SigninScreen
   }),
-  mainFlow: createBottomTabNavigator({
+  mainFlow: createMaterialBottomTabNavigator({
     trackListFlow: createStackNavigator({
       TrackList: TrackListScreen,
       TrackDetail: TrackDetailScreen
